@@ -20,3 +20,7 @@ Update:
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request: (ideally to the devel branch)
+
+## Attribution
+
+I got some suggestions for plugins and settings from Aditya Shevade's [Guide to Neovim](http://nerditya.com/code/guide-to-neovim/)

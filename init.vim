@@ -60,4 +60,4 @@ set smartcase           " ... unless the query has capital letters.
 set gdefault            " Use 'g' flag by default with :s/foo/bar/.
 set magic               " Use 'magic' patterns (extended regular expressions).
 
-
+set termguicolors
