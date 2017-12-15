@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Plugins will go here in the middle."
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'rking/ag.vim'
 Plug 'elzr/vim-json'
 Plug 'derekwyatt/vim-scala'
@@ -17,6 +18,8 @@ Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
 " neomake is a code linting tool that runs in the background.
 Plug 'neomake/neomake'
+" enables project specific configurations
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 colorscheme molokai
@@ -61,3 +64,26 @@ set gdefault            " Use 'g' flag by default with :s/foo/bar/.
 set magic               " Use 'magic' patterns (extended regular expressions).
 
 set termguicolors
+
+" Autostart NerdTree
+" Auto start NERD tree when opening a directory
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | wincmd p | endif
+
+" Auto start NERD tree if no files are specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exe 'NERDTree' | endif
+
+map <C-n> :NERDTreeToggle<CR>
+
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+" syntax highlighting
+syntax on
+
+" file type recognition
+filetype on
+filetype plugin on
+filetype indent on
