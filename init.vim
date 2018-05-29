@@ -20,6 +20,8 @@ Plug 'morhetz/gruvbox'
 Plug 'neomake/neomake'
 " enables project specific configurations
 Plug 'editorconfig/editorconfig-vim'
+" rust!
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 colorscheme molokai
